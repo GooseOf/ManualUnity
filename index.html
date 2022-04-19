@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<style>
+		body{
+			background-color: #333030;
+			color:  white;
+			font-family: 'Roboto';
+		}
+
+		.tipImage{
+			width: 1620px;
+			width: 1280px;
+			border: black 1px solid;
+			margin-bottom: 50px;
+		}
+	</style>
+</head>
+<body>
+	<H1>Объекты</H1>
+	<p>В Unity есть готовые примитивные объекты, которые можно добавить в свой проект.</p>
+	<img src="StandardObjects.png" class = "tipImage">
+	<p>На каждом объекте есть свои компоненты</p>
+	<img src="ComponentsList.png" class = "tipImage">
+	<p>Компоненты можно удалять и добавлять по желанию и необходимости</p>
+	<img src="AddingComponents1.png" class = "tipImage">
+	<p>В Unity есть множество стандартных компонентов, отвечающих за самые разные вещи (звук, отрисовка, передвижение, физика и т.д.)</p>
+	<img src="AddingComponents2.png" class = "tipImage">
+	<p>На каждом объекте обязательно есть компонент Transform. Он отвечает за позицию и направление объекта в пространстве, а так же его размеры</p>
+	<img src="Transform.gif" class = "tipImage">
+	<H1>Компоненты MeshFilter и MeshRenderer. Включение и отключение компонентов</H1>
+	<p>MeshFilter отвечает за форму объекта, MeshRenderer за его текстуру, цвет и отрисовку</p>
+	<p>Компоненты можно включать и отключать</p>
+	<img src="MeshRendererEnabled.png" class = "tipImage">
+	<img src="MeshRendererDisabled.png" class = "tipImage">
+	<p>Как видно, при отключении компонента отвечающего за отрисовку - объект перестал быть видимым (зеленые линии от компонента Collider и в игре их не видно)</p>
+	<p>Так же и с другими, например при отключении коллайдера - объект перестанет сталкиваться с другими объектами</p>
+	<H1>Физика</H1>
+	<p>Компонент RigidBody заставляет объект подчиняться законам физики (Слева объект с компонентом RigidBody, справа объект без него)</p>
+	<img src="RigidBody.gif" class = "tipImage">
+	<p>В окне инспектора видно силы действующие на объект, его скорость и прочее</p>
+	<p>Компонент коллайдер добавляет объекту физическое тело (То есть без коллайдера объект подчиняющийся физике не будет врезаться в другие объекты). <br>
+		Коллайдеры можно подобрать по форме, настроить по полигонам (для 2Д), взять форму меша из MeshFilter и т.д.
+	</p>
+	<img src="ColliderTypes.png" class = "tipImage">
+	<p>Далее наглядно показана работа коллайдера (слева объект с коллайдером, справа без)</p>
+	<img src="Collider.gif" class = "tipImage">
+	<H1>Звук</H1>
+	<p>Источник звука</p>
+	<img src="AudioSource.png" class = "tipImage">
+	<p>Приемник звука</p>
+	<img src="AudioListener.png" class = "tipImage">
+	<p>Добавив звуковую дорожку в AudioSource можно услышать звук в игре</p>
+	<video width="1000px" height="620px" controls="controls">
+		<source src="AudioSource.mp4" type="video/mp4">
+	</video>
+	<H1>Свет</H1>
+	<p>У компонента отвечающего за свет есть несколько типов свечения</p>
+	<p>Directional Light имитирующий солнце и светящий в определенном направлении</p>
+	<img src="DirectionalLight.png" class = "tipImage">
+	<p>Spot Light имитирующий фонарь</p>
+	<img src ="SpotLight1.png" class = "tipImage">
+	<img src ="SpotLight2.png" class = "tipImage">
+	<p>Point Light свет из точки во все стороны</p>
+	<img src ="PointLight1.png" class = "tipImage">
+	<img src ="PointLight2.png" class = "tipImage">
+	<p>Так же свету можно менять цвет</p>
+	<img src = "LightColor.png" class = "tipImage">
+	<p>Вот таких результатов можно добиться</p>
+	<img src = "SignalLightWithoutLight.png" class = "tipImage">
+	<img src = "SignalLightWithLight.png" class = "tipImage">
+	<H1>Системы частиц</H1>
+	<p>Система частиц используется для имитирования огня, дыма, тумана и прочих спецэффектов. В системе частиц можно настроить внешний вид частиц, их размер, скорость, время жизни, столкновения с объектами и т.д.</p>
+	<img src = "ParticleSystem.png" class = "tipImage">
+	<p>Примеры использования систем частиц</p>
+	<p>Выхлоп машины</p>
+	<img src = "Particles1.gif" class = "tipImage">
+	<p>Сияние атмосферы</p>
+	<img src = "ParticlesEarth.gif" class = "tipImage">
+	<p>Реактивная струя шаттла</p>
+	<img src="ParticlesShuttle.gif" class = "tipImage">
+	<p>Жидкость</p>
+	<img src = "ParticlesOilWithoutCollision.gif" class = "tipImage">
+	<p>Жидкость со столкновениями</p>
+	<img src = "ParticlesOilWithCollisions.gif" class = "tipImage">
+	<H1>Собственные компоненты</H1>
+	<p>Для начала нужно создать свой скрипт</p>
+	<img src="CreatingScript1.png" class = "tipImage">
+	<img src="CreatingScript2.png" class = "tipImage">
+	<p>В скриптах можно включать и выключать, двигать, создавать, уничтожать объекты и компоненты. Влиять на их значения, например меняя цвет или массу объекта и т.д.</p>
+	<img src="DefaultScriptsComplection.png" class = "tipImage">
+	<p>Здесь есть два метода Start, который вызывается единожды при появлении объекта, а так же метод Update, который вызывается каждый кадр</p>
+	<p>Так же есть методы которые вызываются когда объект стал видимым для игрока, когда объект столкнулся с другим объектом, когда игрок кликнул по объекту, когда объект был уничтожен и т.д.</p> 
+	<p>Все эти методы пришли от класса MonoBehaviour по умолчанию унаследонного нашим скриптом</p>
+	<p>Подробнее <a style="color:white;" href = "https://docs.unity3d.com/ScriptReference/MonoBehaviour.html">здесь!</a></p>
+	<p>Немного поработав со скриптом можно получить такой результат</p>
+	<img src ="UpAndDownBehaviour.png" class = "tipImage">
+	<img src = "UpAndDownOnOneCube.gif" class = "tipImage">
+	<p>Однажды написав скрипт его можно добавлять на множество объектов, выше скрипт был только на одном из кубов, ниже скрипт был добавлен на оба</p>
+	<img src ="UpAndDownOnTwoCubes.gif" class = "tipImage">
+	<p>Из скрипта так же можно получать другие компоненты и влиять на них, управлять ими, включать или отключать, добавлять новые или удалять имеющиеся</p>
+	<p>Вот пример готового скрипта, реализующего управление машиной с аркадной физикой</p>
+	<img src = "DoneScripts.png" class = "tipImage">
+	<p>В инспекторе можно задавать публичные поля класса не меняя скрипт (Максимальная скорость, скорость вращения и ускорение)</p>
+	<img src = "CarControllerInspector.png" class = "tipImage">
+
+	<p>Немного поигравшись на сцене можно получить такой результат</p>
+	<video width="1000px" height="620px" controls="controls">
+		<source src="Combined.mp4" type="video/mp4">
+	</video>
+
+
+
+</body>
+</html>
